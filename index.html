@@ -3,12 +3,46 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ByOlisJo • App (MVP público)</title>
-  <meta name="description" content="App MVP pública de ByOlisJo para pruebas en múltiples dispositivos." />
+  <title>ByOlisJo • Enlace Único</title>
+  <meta name="description" content="Mini landing minimalista de ByOlisJo con accesos directos." />
+  <style>
+    :root{ --bg:#f7f2ea; --card:#ffffff; --text:#2b2a29; --muted:#6f6b66; --brand:#a88a5b; }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{ margin:0; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(900px 600px at 100% -20%, #efe6d9 0%, transparent 55%),
+                 radial-gradient(800px 500px at -20% 120%, #efe8de 0%, transparent 55%), var(--bg); }
+    .wrap{min-height:100%; display:flex; align-items:center; justify-content:center; padding:32px}
+    .card{ width:min(520px, 92vw); background:var(--card); border-radius:24px; padding:28px;
+      box-shadow:0 10px 35px rgba(0,0,0,.06); border:1px solid #ece7df; }
+    .logo{display:flex; align-items:center; gap:12px; margin-bottom:8px; font-weight:800; letter-spacing:.2px; font-size:22px}
+    .badge{width:36px; height:36px; border-radius:12px; background:linear-gradient(135deg, var(--brand), #d7c2a0); box-shadow:0 8px 24px rgba(168,138,91,.35)}
+    .sub{color:var(--muted); font-size:14px; margin-bottom:18px}
+    .btn{ display:flex; align-items:center; justify-content:center; gap:10px; width:100%; padding:14px 16px;
+      border-radius:14px; border:1px solid #e9e2d7; background:#fff; color:var(--text); text-decoration:none; font-weight:600; transition:all .2s ease; }
+    .btn:hover{transform:translateY(-1px); border-color:#e0d7ca}
+    .btn.primary{background:linear-gradient(180deg,#fff6e7,#fff); border-color:#eadfce}
+    .note{margin-top:16px; color:var(--muted); font-size:12px; text-align:center}
+    .grid{display:grid; gap:10px}
+    @media (min-width:520px){ .grid{gap:12px} }
+    footer{margin-top:18px; text-align:center; color:#8a6e3e; font-size:12px}
+  </style>
 </head>
 <body>
-  <h1>ByOlisJo • MVP Público</h1>
-  <p>Esta es una versión de prueba para confirmar que la app se puede abrir desde cualquier dispositivo.</p>
-  <p>Si puedes leer esto en tu navegador, ¡funciona!</p>
+  <main class="wrap">
+    <section class="card">
+      <div class="logo"><div class="badge"></div> ByOlisJo</div>
+      <p class="sub">Tu acceso directo a WhatsApp, sitio web y herramientas.</p>
+      <div class="grid">
+        <a class="btn primary" href="https://wa.me/17867798675?text=Hola%20Olis%2C%20quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener">📱 WhatsApp</a>
+        <a class="btn" href="https://byolisjo.com/" target="_blank" rel="noopener">🌐 Sitio web</a>
+        <a class="btn" href="#" onclick="alert('Próximamente: enlace a tu perfil de Canva'); return false;">🎨 Canva (próximamente)</a>
+        <a class="btn" href="#" onclick="alert('Próximamente: enlace a tu app destacada'); return false;">🛠 App destacada (próximamente)</a>
+      </div>
+      <p class="note">Tip: guarda este enlace en tu bio de Instagram.</p>
+      <footer>© <span id="y"></span> ByOlisJo</footer>
+    </section>
+  </main>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
